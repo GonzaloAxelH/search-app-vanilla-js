@@ -1,15 +1,2 @@
-//variables 
-
-$search-bar_border :#e6e6e6;
-$stats-color:#70757a;
-$clear-button-color:#d9d9d9d9;
-$background-color:#fff;
-$font-color:#3333;
-$font-blue :#4885ed;
-$logo-red:#db3236;
-$logo-yellow:#fffc10;
-$logo-green:#3cba54;
-$link-color:#1a0dab;
-$link-visited-color:#609;
-$link-outine-color:#000;
-$font-stack:"Roboto",Arial,sans-serif;
+@import "_base.scss";
+@import "_shareClases.scss";
