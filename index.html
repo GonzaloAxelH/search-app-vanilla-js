@@ -13,10 +13,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-select.css">
 </head>
 
 <body>
     <main class="App">
+
+        <div class="app__select-language">
+
+
+            <select class="vodiapicker">
+                <option value="en" class="test"
+                    data-thumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1200px-Bandera_de_Espa%C3%B1a.svg.png">
+                    Spanish</option>
+                <option value="au" data-thumbnail="https://www.ecured.cu/images/a/a7/Bandera-de-inglaterra-400x240.png">
+                    Engllish (AU)</option>
+                <option value="de" data-thumbnail="https://www.banderasvdk.com/blog/wp-content/uploads/dinamarca.jpg">
+                    Danish</option>
+
+            </select>
+
+            <div class="lang-select">
+                <button class="btn-select" value=""></button>
+                <div class="b">
+                    <ul id="a"></ul>
+                </div>
+            </div>
+        </div>
+
         <div class="app__title">
             <span class="app__title-blue">S</span>
             <span class="app__title-red">e</span>
@@ -29,25 +53,48 @@
             <span class="app__title-red">!</span>
         </div>
         <div class="app__barsearch">
-            <div class="app__input">
-                <input type="search" placeholder="Enter" />
-                <i class="">icon__lupa</i>
+            <div class="app__input-search">
+                <input id="search" type="search" />
+                <button class="">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
             <p class="app__num-results">Displaying 20 results</p>
         </div>
         <section class="app__results-items">
+            <!-- inicio -->
             <div class="app__result-item">
-                <h3 class="app__result-item-title result-enabled">Dave Grohl</h3>
+                <a href="#" class="app__result-item-title visited">Dave Grohl</a>
                 <div class="app__result-item-info">
                     <img width="60" height="60"
                         src=" https://st.depositphotos.com/1020341/4233/i/600/depositphotos_42333899-stock-photo-portrait-of-huge-beautiful-male.jpg "
                         alt="lion">
-                    <span class="app__result-item-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    <span class="app__result-item-description">Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit.
+                        Itaque repellendus distinctio praesentium soluta expedita animi!</span>
+                </div>
+            </div>
+
+            <!-- inicio -->
+            <div class="app__result-item">
+                <a href="#" class="app__result-item-title">Dave Grohl</a>
+                <div class="app__result-item-info">
+                    <img width="60" height="60"
+                        src=" https://st.depositphotos.com/1020341/4233/i/600/depositphotos_42333899-stock-photo-portrait-of-huge-beautiful-male.jpg "
+                        alt="lion">
+                    <span class="app__result-item-description">Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit.
                         Itaque repellendus distinctio praesentium soluta expedita animi!</span>
                 </div>
             </div>
         </section>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./js/languaje.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
