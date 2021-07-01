@@ -11,7 +11,7 @@ $('.vodiapicker option').each(function () {
     var item = '<li><img src="' + img + '" alt="" value="' + value + '"/><span>' + text + '</span></li>';
     langArray.push(item);
 })
-
+    
 $('#a').html(langArray);
 
 //Set the button value to the first el of the array

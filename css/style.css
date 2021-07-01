@@ -78,6 +78,9 @@ body{
 .app__title-green{
     color:var(--green);
 }
+.signo{
+    transform: rotateX(90deg);
+}
 .app__barsearch{
     width:100vw;
     display: flex;
