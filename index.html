@@ -23,12 +23,12 @@
 
 
             <select class="vodiapicker">
-                <option value="en" class="test"
+                <option value="es" class="test"
                     data-thumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1200px-Bandera_de_Espa%C3%B1a.svg.png">
                     Spanish</option>
-                <option value="au" data-thumbnail="https://www.ecured.cu/images/a/a7/Bandera-de-inglaterra-400x240.png">
+                <option value="en" data-thumbnail="https://www.ecured.cu/images/a/a7/Bandera-de-inglaterra-400x240.png">
                     Engllish (AU)</option>
-                <option value="de" data-thumbnail="https://www.banderasvdk.com/blog/wp-content/uploads/dinamarca.jpg">
+                <option value="en" data-thumbnail="https://www.banderasvdk.com/blog/wp-content/uploads/dinamarca.jpg">
                     Danish</option>
 
             </select>
@@ -53,12 +53,12 @@
             <span class="app__title-red signo">!</span>
         </div>
         <div class="app__barsearch">
-            <div class="app__input-search">
+            <form class="app__input-search" id="form">
                 <input  autocomplete="off" id="searchInput" type="search" />
-                <button class="">
+                <button class="btn" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
-            </div>
+            </form>
             <p class="app__num-results">Displaying 20 results</p>
         </div>
         <section class="app__results-items">
@@ -93,7 +93,7 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="./js/languaje.js"></script>
+    <script src="./js/languaje.js" type="module"></script>
     <script src="./js/app.js" type="module"></script>
 </body>
 

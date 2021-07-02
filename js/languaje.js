@@ -1,7 +1,15 @@
-//test for getting url value from attr
-// var img1 = $('.test').attr("data-thumbnail");
-// console.log(img1);
+import { getSearchTerm } from './dataFunctions.js'
+import { retrieveSearchResults } from './dataFunctions.js';
 
+
+
+$(document).ready(()=>{
+    localStorage.setItem("languaje", "es");
+});
+
+
+
+console.log(localStorage.getItem("languaje"))
 //test for iterating over child elements
 var langArray = [];
 $('.vodiapicker option').each(function () {
@@ -27,7 +35,16 @@ $('#a li').click(function () {
     $('.btn-select').html(item);
     $('.btn-select').attr('value', value);
     $(".b").toggle();
-    console.log(value);
+    localStorage.setItem("languaje", value);
+    console.log(localStorage.getItem("languaje"))
+
+    const processsTheSearch = async () =>{
+        const searchTerm = getSearchTerm();
+        if(searchTerm === "") return;
+        const resultArray= await retrieveSearchResults(localStorage.getItem("searchTerm"));	//retrieve = recuperar    
+        console.log(resultArray);
+    }
+    processsTheSearch();
 });
 
 $(".btn-select").click(function () {
