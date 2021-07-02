@@ -4,21 +4,24 @@
     src:url("../fonts/product-sans/Product\ Sans\ Regular.ttf");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
 /* variables */
 :root{
     --background-theme:#fff;
     --text-theme:#000;
     --text-buscado:#609;
     --text-no-buscado:#1a0dab;
-    --color-border:#ccc;
+    --color-border:#dedede;
+    --color-link:#202124;
     --blue:#4285F4;
     --red:  #EA4335;
     --green:#34A853;
     --yellow:#FBBC05;
     --font-big:70px;
     --font-title:18px;
-    --font-medium-1:16px;
-    --font-medium-0:14px;   
+    --font-medium-2:16px;
+    --font-medium-1:14px;  
+    --font-medium-0:13px;   
     --font-google:"Product Sans";
     --font-input:"Roboto",Arial,sans-serif;
     --font-small-0:12px;
@@ -32,15 +35,18 @@ body{
     background:var(--background-theme);
     flex-direction: column;
     align-items: center;
+   
 }
 
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
-    
+    transition: 0.2s all;
 }
-
+.App{
+    font-family: 'arial', sans-serif;
+}
 .App a{
     text-decoration: none;
 }
@@ -89,20 +95,33 @@ body{
     flex-direction: column;
 }
 .app__input-search{
-    border:1px solid var(--color-border);
+    border:1px solid var(--color-border); 
     border-radius:30px;
     display:flex;
     align-items: center;
     padding: 0.7em;
-    width:500px;
+    width:55vw;
+    transition: 0.4s all;
+    transform: scale(0.98888);
+
+}
+.app__input-search:hover,
+.app__input-search:focus,
+.app__input-search:active{
+    border:1px solid transparent; 
+    box-shadow: -1px 1px 45px -23px rgba(0,0,0,0.74);
+    -webkit-box-shadow: -1px 1px 45px -23px rgba(0,0,0,0.74);
+    -moz-box-shadow: -1px 1px 45px -23px rgba(0,0,0,0.74);
+    transform: scale(1.00011);
+    transition: 0.4s all;
 }
 .app__barsearch input{
         border:none;
         width:100%;
         outline:none;
         padding: 6px  0 6px 6px;
-        font-family: var(---font-input);
-        font-size: var(--font-medium-1);  
+       
+        font-size: var(--font-medium-2);  
         font-weight: 500;  
 }
 .app__barsearch button{
@@ -115,9 +134,10 @@ body{
 }
 
 .app__num-results{
-    width:460px;
+    width:50vw;
     font-size: var(--font-small-1);
-    font-style: italic;
+    margin-top: 0.7em;
+    color:var(--color-border);
 }
 
 .app__results-items{
@@ -127,13 +147,33 @@ body{
     flex-direction: column;
 }
 .app__result-item{
-     width:460px;
+     width:50vw;
      margin-top:1em;
-     font-family: var(--font-input);
+     border-radius:6px;
+     border:1px solid var(--color-border);
+     cursor:pointer;
+     padding:0.8em;
+}
+.app__result-item:hover{
+    border:1px solid transparent; 
+    box-shadow: -1px 1px 45px -25px rgba(0,0,0,0.74);
+    -webkit-box-shadow: -1px 1px 45px -25px rgba(0,0,0,0.74);
+    -moz-box-shadow: -1px 1px 45px -25px rgba(0,0,0,0.74);
+    transform: scale(1.00011);
+    transition: 0.4s all;
 }
 .app__result-item-title{
     color: var(--text-no-buscado);
     font-size: var(--font-title);
+    line-height:1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: var( --font-input);
+}
+
+.app__result-item-title:visited{
+    color:var(--text-buscado);
 }
 .app__result-item-title:hover{
     text-decoration:underline;
@@ -145,30 +185,51 @@ body{
 }
 
 .app__result-item-info img{
-    margin-right: 1em;
+    width:60px;
+    height:auto;
+    margin-right:0.5em;
+    object-fit:cover;
+    border-radius:5px;
 }
+
 .app__result-item-description{
     max-width: 100%;    
     line-height: 20px;
     flex-grow: 1;
     overflow: hidden;
     max-height:60px;
+    text-overflow: ellipsis;
     font-size: var(--font-medium-0);
+    font-family: var( --font-input);
 }
 .visited{
     color: var(--text-buscado);
+}
+
+
+@media screen and (max-width:768px){
+    .app__result-item{
+        width:75vw;
+   }
+   .app__num-results{
+       width:75vw;
+   }
+   .app__input-search{
+        width:80vw;
+    }   
 }
 
 @media screen and (max-width:500px){
     :root{
     --font-big:50px;
     --font-title:20px;
-    --font-medium-1:15px;
-    --font-medium-0:13px;   
+    --font-medium-2:15px;
+    --font-medium-1:13px;
+    --font-medium-0:12px;   
     --font-google:"Product Sans";
     --font-input:"arial",sans-serif;
-    --font-small-0:12px;
-    --font-small-1:11px; 
+    --font-small-0:11px;
+    --font-small-1:10px; 
     }
     .app__input-search{
           min-width:100%;
@@ -182,11 +243,16 @@ body{
     }
     .app__result-item{
          width:100%;
-        padding:0 0.66em;
     }
     .app__num-results{
         width:100%;
-        padding:0 0.3em;
+        padding:0 1.5em;
+    }
+    .app__results-items{
+        padding:0 1.5em;
+    }
+    .app__result-item-description{
+        font-size: var(--font-medium-1);
     }
 
 }
