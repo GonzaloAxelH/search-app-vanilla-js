@@ -35,9 +35,9 @@ body{
     background:var(--background-theme);
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden;
-   
+    overflow-x: hidden;   
 }
+
 form{
     margin:0;
     padding:0;
@@ -164,11 +164,6 @@ form{
      padding:0.8em;
 }
 .app__result-item:hover{
-    border:1px solid transparent; 
-    box-shadow: -1px 1px 45px -25px rgba(0,0,0,0.74);
-    -webkit-box-shadow: -1px 1px 45px -25px rgba(0,0,0,0.74);
-    -moz-box-shadow: -1px 1px 45px -25px rgba(0,0,0,0.74);
-    transform: scale(1.00011);
     transition: 0.4s all;
 }
 .app__result-item-title{

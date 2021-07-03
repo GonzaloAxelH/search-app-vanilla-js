@@ -1,0 +1,68 @@
+
+.loading-screen{
+    width: 100%;
+    height: auto;
+	margin-top: 5em;
+    align-items: center;
+	display: none;
+    justify-content: center;
+}
+
+
+
+.loading-screen.active{
+		display: flex;
+}
+.loading{
+    width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.loading span{
+    width: 32px;
+    height: 32px;
+    background-color: red;
+    margin: 4px;
+    animation: scale 1.5s linear infinite;
+}
+
+@keyframes scale{
+    50%{
+        transform: scale(1.2);
+    }
+}
+
+.loading span:nth-child(1){
+    border-radius: 50% 50% 0 50%;
+    background-color: var(--red);
+    transform-origin: bottom right;
+}
+
+.loading span:nth-child(2){
+    border-radius: 50% 50% 50% 0;
+    background-color: var(--blue);
+    transform-origin: bottom left;
+    animation-delay: .5s;
+}
+
+.loading span:nth-child(3){
+    border-radius: 50% 0 50% 50%;
+    background-color: var(--green);
+    transform-origin: top right;
+    animation-delay: 1.5s;
+}
+
+.loading span:nth-child(4){
+    border-radius: 0 50% 50% 50%;
+    background-color: var(--yellow);
+    transform-origin: top left;
+    animation-delay: 1s;
+}

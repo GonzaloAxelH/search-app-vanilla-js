@@ -1,7 +1,6 @@
 import { getSearchTerm } from './dataFunctions.js'
 import { retrieveSearchResults } from './dataFunctions.js';
-
-
+import { paintOnScreenResults,deleteOldResults,loadingLoader,removeLoader} from './paintResults.js'
 
 $(document).ready(()=>{
     localStorage.setItem("languaje", "es");
@@ -39,10 +38,13 @@ $('#a li').click(function () {
     console.log(localStorage.getItem("languaje"))
 
     const processsTheSearch = async () =>{
+        deleteOldResults();
         const searchTerm = getSearchTerm();
         if(searchTerm === "") return;
+        loadingLoader();
         const resultArray= await retrieveSearchResults(localStorage.getItem("searchTerm"));	//retrieve = recuperar    
-        console.log(resultArray);
+        removeLoader();
+        paintOnScreenResults(resultArray);
     }
     processsTheSearch();
 });

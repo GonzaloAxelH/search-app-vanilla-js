@@ -1,6 +1,6 @@
 import { getSearchTerm } from './dataFunctions.js'
 import { retrieveSearchResults } from './dataFunctions.js';
-
+import { paintOnScreenResults,deleteOldResults ,loadingLoader,removeLoader} from './paintResults.js'
 const initApp = () => {
 	const form = document.getElementById('form');
 	form.addEventListener("submit",submitTheSearch);	
@@ -12,10 +12,13 @@ const submitTheSearch=(event)=>{
 }
 
 const processsTheSearch = async () =>{
+	deleteOldResults();
 	const searchTerm = getSearchTerm();
 	if(searchTerm === "") return;
+	loadingLoader();
 	const resultArray= await retrieveSearchResults(searchTerm);	//retrieve = recuperar
-	console.log(resultArray)
+	removeLoader();
+	paintOnScreenResults(resultArray);
 }
 
 

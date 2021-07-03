@@ -67,9 +67,9 @@ const queryData = async (apiString) =>{
 const getMaxChars = () =>{
 	const widthScreen =window.innerWidth || document.body.clientWidth;
 	let maxChars;
-	if(widthScreen < 414) maxChars =65;
-	if(widthScreen >= 414 && widthScreen < 1400) maxChars=100;
-	if(widthScreen >= 1400) maxChars=135;
+	if(widthScreen < 414) maxChars =150;
+	if(widthScreen >= 414 && widthScreen < 1400) maxChars=250;
+	if(widthScreen >= 1400) maxChars=350;
 	return maxChars; 
 }
 

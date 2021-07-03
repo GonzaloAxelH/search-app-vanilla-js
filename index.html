@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/style-select.css">
+    <link rel="stylesheet" href="./css/loader.css">
 </head>
 
 <body>
@@ -61,32 +62,20 @@
             </form>
             <p class="app__num-results">Displaying 20 results</p>
         </div>
-        <section class="app__results-items">
-            <!-- inicio -->
-            <div class="app__result-item">
-                <a href="#" class="app__result-item-title visited">Dave Grohl</a>
-                <div class="app__result-item-info">
-                    <img width="60" height="60"
-                        src=" https://st.depositphotos.com/1020341/4233/i/600/depositphotos_42333899-stock-photo-portrait-of-huge-beautiful-male.jpg "
-                        alt="lion">
-                    <span class="app__result-item-description">Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit.
-                        Itaque repellendus distinctio praesentium soluta expedita animi!</span>
-                </div>
+        
+        <div class="loading-screen" id="loading-screen">
+            <div class="loading">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
+          </div>
 
-            <!-- inicio -->
-            <div class="app__result-item">
-                <a href="#" class="app__result-item-title">Dave Grohl</a>
-                <div class="app__result-item-info">
-                    <img width="60" height="60"
-                        src=" https://st.depositphotos.com/1020341/4233/i/600/depositphotos_42333899-stock-photo-portrait-of-huge-beautiful-male.jpg "
-                        alt="lion">
-                    <span class="app__result-item-description">Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit.
-                        Itaque repellendus distinctio praesentium soluta expedita animi!</span>
-                </div>
-            </div>
+        
+        <section class="app__results-items" id="app-searchs-results">
+                <!--- list results search -->
+
         </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
